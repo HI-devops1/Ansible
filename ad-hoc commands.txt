@@ -1,0 +1,8 @@
+ansible [pattern] -m [module] -a "[module options]"
+-a option accepts options either through the 'key=value' syntax 
+(or) a JSON string starting with { and ending with }
+
+ansible all -i myhosts -m ping [m means module which is ping ]
+ansible all -i myhosts -m apt -a name="apache2"  [installs apache] [no space between name,=,apache2]
+ansible all -i myhosts -m apt -a name="tree" [we get error bcz tree require root permission]
+ansible all -i myhosts -b -m apt -a name="tree" [-b = 'become: yes' in .yml file]
