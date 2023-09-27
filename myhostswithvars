@@ -1,0 +1,10 @@
+[mywebservers]
+node0@172.31.31.23
+rnode@172.31.44.214
+
+[myappserver]
+node1@172.31.18.89
+
+[myweservers:vars]
+mywebpackforubuntu = apache2
+mywebpackforredhat = httpd
