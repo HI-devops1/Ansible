@@ -3,12 +3,12 @@
   tasks:
     - name: installing java on ubuntu
       apt:
-        - name: "{{myjavapackonubuntu}}"
-          state: present
+        name: "{{myjavapackonubuntu}}"
+        state: present
       when: ansible_os_family == 'Debian'
     
     - name: installing java on ubuntu
       ansible.builtin.dnf:
-        - name: "{{myjavapackonredhat}}"
-          state: present
+        name: "{{myjavapackonredhat}}"
+        state: present
       when: ansible_os_family == 'RedHat'
