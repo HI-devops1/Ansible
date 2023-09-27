@@ -17,7 +17,7 @@
    - name : installing webserver on redhat server
      ansible.builtin.dnf:                                  # it is equal to apt
        name: httpd
-       status: present
+       state: present
      when: ansible_os_family == 'RedHat'
 
    - name: running server 
