@@ -1,0 +1,28 @@
+---
+- hosts: mywebserver             #use myhostswithvar inventory with this file
+  become: yes
+  tasks :
+   - name: installing apache2
+     apt:
+       name: "{{mywebpackforubuntu}}"
+       state: present
+     when: ansible_os_family == 'Debian'            #ansible all -i myhosts -m setup -a filter="*family*" in master
+
+   - name: running apache2 
+     service :
+       name: "{{mywebpackforubuntu}}"
+       state: started
+     when: ansible_os_family == 'Debian'
+   
+   - name : installing webserver on redhat server
+     ansible.builtin.dnf:                                  # it is equal to apt
+       name: "{{mywebpackforredhat}}"
+       state: present
+     when: ansible_os_family == 'RedHat'
+
+   - name: running server 
+     service:
+       name:  "{{mywebpackforredhat}}"
+       state: started
+     when: ansible_os_family == 'RedHat'
+          
