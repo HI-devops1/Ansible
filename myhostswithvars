@@ -5,6 +5,6 @@ rnode@172.31.44.214
 [myappserver]
 node1@172.31.18.89
 
-[myweservers:vars]
+[mywebservers:vars]
 mywebpackforubuntu = apache2
 mywebpackforredhat = httpd

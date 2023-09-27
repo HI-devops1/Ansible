@@ -1,5 +1,5 @@
 ---
-- hosts: mywebserver             #use myhostswithvar inventory with this file
+- hosts: mywebservers            #use myhostswithvars inventory with this file
   become: yes
   tasks :
    - name: installing apache2
@@ -15,7 +15,7 @@
      when: ansible_os_family == 'Debian'
    
    - name : installing webserver on redhat server
-     ansible.builtin.dnf:                                  # it is equal to apt
+     ansible.builtin.dnf:                                  
        name: "{{mywebpackforredhat}}"
        state: present
      when: ansible_os_family == 'RedHat'
