@@ -6,23 +6,23 @@
      apt:
        name: apache2
        state: present
-     when: ansible_os family == 'Debian'            #ansible all -i myhosts -m setup -a filter="*family*" in master
+     when: ansible_os_family == 'Debian'            #ansible all -i myhosts -m setup -a filter="*family*" in master
 
    - name: running apache2 
      service :
        name: apache2
        state: started
-     when: ansible_os family == 'Debian'
+     when: ansible_os_family == 'Debian'
    
    - name : installing webserver on redhat server
      ansible.builtin.dnf:                                  # it is equal to apt
        name: httpd
        status: present
-     when: ansible_os family == 'redHat'
+     when: ansible_os_family == 'redHat'
 
    - name: running server 
      service:
        name:  httpd
        state: started
-     when: ansible_os family == 'redHat'
+     when: ansible_os_family == 'redHat'
           
