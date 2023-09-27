@@ -1,0 +1,4 @@
+apt - installing
+service - starting or running
+file - creating files
+geturl - downloading
