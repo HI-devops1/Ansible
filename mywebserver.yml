@@ -18,11 +18,11 @@
      ansible.builtin.dnf:                                  # it is equal to apt
        name: httpd
        status: present
-     when: ansible_os family == 'redhat'
+     when: ansible_os family == 'redHat'
 
    - name: running server 
      service:
        name:  httpd
        state: started
-     when: ansible_os family == 'redhat'
+     when: ansible_os family == 'redHat'
           
