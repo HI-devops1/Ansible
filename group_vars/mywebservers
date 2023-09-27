@@ -1,0 +1,5 @@
+---
+mywebpackforubuntu = apache2           # use this in combination with 'myhosts' bcz it doesn't have variables in it
+mywebpackforredhat = httpd             # this file name should be same as that of groupname[mywebservers]
+myjavapackonubuntu = openjdk-8-jdk     # myhosts + mywebservers = myhostwithvars 
+myjavapackonredhat = java-1.8.0-openjdk     # -> difference is in myhostwithvars we declared vars there itself instead of in anotherfile

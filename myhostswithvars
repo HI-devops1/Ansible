@@ -8,3 +8,5 @@ node1@172.31.18.89
 [mywebservers:vars]
 mywebpackforubuntu = apache2
 mywebpackforredhat = httpd
+myjavapackonubuntu = openjdk-8-jdk
+myjavapackonredhat = java-1.8.0-openjdk 
