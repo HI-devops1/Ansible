@@ -1,7 +1,7 @@
 ---
 - hosts: mywebservers            #use myhostswithvars inventory with this file
-  become: yes
-  tasks :
+  become: yes                    # use myhosts inventory but create mywebservers file and put variables in it 
+  tasks :                               # then ansible-palybook -i myhosts mywebserverwithwars.yml
    - name: installing apache2
      apt:
        name: "{{mywebpackforubuntu}}"

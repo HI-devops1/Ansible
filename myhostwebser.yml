@@ -10,3 +10,4 @@
         msg: 
           -variable 1 is "{{myvars01}}"
            variable 2 is "{{myvars02}}"
+           variable 3 is "{{myjavapackonubuntu}}"
