@@ -1,0 +1,12 @@
+---
+- hosts: node0@172.31.31.23
+  become: yes
+  vars: 
+    myvars01: git
+    myvars02: tree
+  tasks:
+    - name: Iwant to dispaly my vars01
+      debug:
+        msg: 
+          -variable 1 is "{{myvars01}}"
+           variable 2 is "{{myvars02}}"
