@@ -16,10 +16,10 @@
       apt:
         name: git
         state: present
-      when: myfirsttaskresult.stderr= ""   # This means no error while executing command
+      when: myfirsttaskresult.stderr= " "   # This means no error while executing command
 
     - name: install tree
       apt:
         name: tree
         state: present
-      when: myfirsttaskresult.stderr != ""   # This means no error while executing command
+      when: myfirsttaskresult.stderr != " "   # This means no error while executing command
