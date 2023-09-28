@@ -10,11 +10,11 @@
       debug:
         msg: "{{myfirsttaskresult}}"        # we can see stdout & stderr we can choose any of them to decide our next task
 
-    - name: install git                 # Deciding to install git or tree based on result of myfirsttaskresult
-      apt:
+    - name: install git
+      apt: 
         name: git
         state: present
-      when: myfirsttaskresult.stderr==""  # we are selecting stderr from output of 'command'
+      when: myresult.stderr ==""  # we are selecting stderr from output of 'command'
 
     - name: install tree
       apt:
