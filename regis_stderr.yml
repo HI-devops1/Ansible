@@ -10,14 +10,14 @@
       debug:
         msg: "{{myfirsttaskresult}}"
 
-    - name: install git                        # Deciding to install git or tree based on result of 'myfirsttaskresult
+    - name: install git                 # Deciding to install git or tree based on result of myfirsttaskresult
       apt:
-        name: git
-        state: present
-      when: myfirsttaskresult.stderr=""   # This means no error while executing command
+         name: git
+         state: present
+      when: myfirsttaskresult.stderr=""  # This means no error while executing command
 
     - name: install tree
       apt:
-        name: tree
-        state: present
+         name: tree
+         state: present
       when: myfirsttaskresult.stderr!=""   # This means no error while executing command
