@@ -4,10 +4,10 @@
   tasks:
     - name: installing java on ubuntu
       apt:
-        name: "{{myjavapackonubuntu}}"
-        state: present
-      when: ansible_os_family == 'Debian'
-    
+        name: "{{myjavapackonubuntu}}"     # we have created host_vars with node0@172.31.31.23 
+        state: present                     #host vars are given preference over group vars so if we run this program  
+      when: ansible_os_family == 'Debian'       # node0@172.31.31.23 will have java11(bcz of var created in file with same name) on it, while other 'mywebservers'
+                                                # has java8
     - name: installing java on redhat
       ansible.builtin.dnf:
         name: "{{myjavapackonredhat}}"
