@@ -1,0 +1,25 @@
+---
+- hosts: 
+  become: yes
+  tasks:
+    - name: execute linux command using playbook
+      command: hostname -f
+      register: myfirsttaskresult           # register stores output of command in variable 
+
+    - name: debug 1st task result
+      debug:
+        msg: "{{myfirsttaskresult}}"
+
+
+# Deciding to install git or tree based on result of 'myfirsttaskresult'
+    - name: install git
+      apt:
+        name: git
+        state: present
+      when: myfirsttaskresult.stderr= ""   # This means no error while executing command
+
+    - name: install tree
+      apt:
+        name: tree
+        state: present
+      when: myfirsttaskresult.stderr != ""   # This means no error while executing command
