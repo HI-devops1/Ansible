@@ -2,22 +2,26 @@
 - hosts: node0@172.31.31.23
   become: yes
   tasks:
-    - name: execute linux command using playbook
-      command: hostname -f
-      register: myfirsttaskresult           # register stores output of command in variable 
+  - name: i want to execute direct linux command
+    command: hostname -f
+    register: myresult                               # register stores output of command in variable
 
-    - name: debug 1st task result
-      debug:
-        msg: "{{myfirsttaskresult}}"        # we can see stdout & stderr we can choose any of them to decide our next task
+  - name: display first task result
+    debug:
+       msg: "{{myresult}}"                           # we can see stdout & stderr we can choose any of them to decide our next task
 
-    - name: install git
-      apt: 
-        name: git
-        state: present
-      when: myresult.stderr ==""  # we are selecting stderr from output of 'command'
+  - name: install git
+    apt: 
+      name: git
+      state: present
+    when: myresult.stderr ==""                        # we are selecting stderr from output of 'command'
 
-    - name: install tree
-      apt:
-        name: tree
-        state: present
-      when: myfirsttaskresult.stderr!=""   # This means error while executing command
+  - name: instll tree
+    apt:
+      name: tree
+      state: present
+    when: myresult.stderr !=""                        # This means error while executing command
+
+             
+
+  
