@@ -16,7 +16,7 @@
   - name: downloading internet files
     get_url:
       url: https://dlcdn.apache.org/tomcat/tomcat-10/v10.1.13/bin/apache-tomcat-10.1.13.tar.gz
-      dest: home/ubuntu/apache-tomcat-10.1.13.tar.gz
+      dest: /home/ubuntu/apache-tomcat-10.1.13.tar.gz
       force_basic_auth: yes
 
   - name: copying dynamic file into nodes
