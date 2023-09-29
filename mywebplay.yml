@@ -1,0 +1,8 @@
+---
+- hosts: mywebservers
+  become: yes                            
+  roles:
+    - {role: mywebrole, when: ansible_os_family == "Debian"}            # in main.yml of tasks of mywebrole we write code to install apache.
+
+    # in real time we dont use playbook we use roles only
+  

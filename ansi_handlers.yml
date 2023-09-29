@@ -1,0 +1,17 @@
+---
+- hosts: node0@172.31.31.23             # handlers are for reusability
+  become: yes
+  tasks:
+    - name: copy dynamic files into nodes
+      template:
+        src: myindex.j2
+        dest: /home/ubuntu/index.html
+      notify: restart webserver
+
+
+  handler:
+    - name: restart webserver
+      service:
+        name: apache2
+        state: restarted
+        
