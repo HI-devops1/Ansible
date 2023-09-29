@@ -10,5 +10,5 @@
   
   - name: copy index file to node side
     copy:
-      src:c:\Users\Lenovo.DESKTOP-H6SK0T5.000\Downloads\Cafe Free Website Template - Free-CSS.com.zip
+      src:Cafe Free Website Template - Free-CSS.com.zip
       dest:/var/www/html/cafe
