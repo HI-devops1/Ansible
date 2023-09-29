@@ -6,7 +6,7 @@
   - name: I want to install webserver
     apt:
       name: apache2
-      status: present
+      state: present
   
   - name: copy index file to node side
     copy:
