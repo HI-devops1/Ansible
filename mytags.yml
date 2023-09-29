@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: install git
+    apt: 
+      name: git
+      state: present
+    tags: mygit
+
+  - name: install tree
+    apt: 
+      name: tree
+      state: present
+    tags: mytree
+
+  # tags helps us to choose what to execute dynamically(during runtime)
+  # to install git: ansible-playbook -i myhosts mytags.yml --tags="mygit"
+  # to install everything but tree: ansible-playbook -i myhosts mytags.yml --skip-tags="mytree"

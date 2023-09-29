@@ -1,0 +1,14 @@
+---
+- hosts: node0@172.31.31.23
+  become: yes
+  tasks:
+  - include_tasks: myfile.yml
+  - name: I want to install webserver
+    apt:
+      name: apache2
+      status: present
+  
+  - name: copy index file to node side
+    copy:
+      src:c:\Users\Lenovo.DESKTOP-H6SK0T5.000\Downloads\Cafe Free Website Template - Free-CSS.com.zip
+      dest:/var/www/html/cafe
