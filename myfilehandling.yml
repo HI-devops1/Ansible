@@ -10,5 +10,5 @@
   
   - name: copy index file to node side
     copy:
-      src:Cafe Free Website Template - Free-CSS.com.zip
-      dest:/var/www/html/cafe
+      src: Cafe Free Website Template - Free-CSS.com.zip
+      dest: /var/www/html/cafe
