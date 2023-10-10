@@ -2,7 +2,7 @@
  - name: copy tomcat-user xml file into node side 
    copy:
       src: templates/mytomusers.j2
-      dest: opt/tomcat/conf/tomcat-users.xml
+      dest: /opt/tomcat/conf/tomcat-users.xml
 
  - name: context file into node side
    copy: 
