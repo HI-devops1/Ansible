@@ -11,8 +11,9 @@
     state: directory
 
 - name: extract tar file
-  command: sudo tar xzvf apache-tomcat-10*tar.gz -C /opt/tomcat --strip-components=1
-  creates: /opt/tomcat/LICENCE
+  command:
+    cmd: sudo tar xzvf apache-tomcat-10*tar.gz -C /opt/tomcat --strip-components=1
+    creates: /opt/tomcat/LICENCE
    
 # or we can use unarchive module
 # name: Unarchive a file that needs to be downloaded (added in 2.0)
