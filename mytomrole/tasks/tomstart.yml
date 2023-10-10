@@ -2,7 +2,7 @@
 - name: start tomcat
   service:
     name: tomcat
-    state: present
+    state: started
 
    # or
 
