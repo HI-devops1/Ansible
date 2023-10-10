@@ -2,6 +2,6 @@
 - name: create tomcat user
   user:
     name: tomcat
-    shell: bin/false       # is used to deny shell access to user
+    shell: /bin/false       # is used to deny shell access to user
     home: /opt/tomcat      # in website it is like '-d /opt/tomcat ' which means directory # just like home of ubuntu is /home/ubuntu  -- after installing tomcat (by following website instructions) login to server
     state: present         # then sudo -i, then #cd /opt/tomcat/ we can see files related to tomcat
