@@ -3,7 +3,6 @@
   get_url:
     url:  http://18.218.216.163:8082/artifactory/ansi/com/maha/mahaLogin/2.0/mahaLogin-2.0.war
     dest: /opt/tomcat/webapps/mahaLogin-2.0.war
-    force_basic_auth: yes
     username: admin
     password: Shiva1122
 
